@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>สวนจอห์นคนหล่อ  – ผลไม้ส่งตรงจากสวน (หน้าตัวอย่าง)</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFBEA;--ink:#12372A;--muted:#5B6F66;--card:#FFFFFF;--line:#E7DFB8;--hero:#FFD23F;--hero-ink:#12372A;--accent:#0F4C3A;--on-accent:#FFFFFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10241C;--ink:#F6F1D8;--muted:#A9BDB2;--card:#17332A;--line:#28493D;--accent:#FFD23F;--on-accent:#12372A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10241C;--ink:#F6F1D8;--muted:#A9BDB2;--card:#17332A;--line:#28493D;--accent:#FFD23F;--on-accent:#12372A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Sarabun',Tahoma,sans-serif;font-size:17px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:'Mitr','Sarabun',Tahoma,sans-serif;font-weight:600;line-height:1.25;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-family:'Mitr',sans-serif;font-size:1.25rem}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.cartbtn{background:var(--accent);color:var(--on-accent);border:0;border-radius:999px;padding:8px 18px;font-weight:600}
+.hero{background:var(--hero);color:var(--hero-ink);padding:56px 5vw 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem)}
+.hero p{max-width:34ch;font-size:1.1rem;margin:16px 0 24px}
+.hero a{display:inline-block;background:var(--hero-ink);color:#FFD23F;padding:12px 26px;border-radius:999px;text-decoration:none;font-weight:600}
+.hero .big{font-size:clamp(7rem,22vw,14rem);text-align:center;line-height:1}
+main{padding:48px 5vw}
+main h2{font-size:1.8rem;margin-bottom:6px}
+main>p{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pic{font-size:4.5rem;text-align:center;padding:22px 0}
+.info{padding:14px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font-size:1.1rem}
+.info small{color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+.price{font-weight:600;font-size:1.1rem}
+.add{background:var(--accent);color:var(--on-accent);border:0;border-radius:10px;padding:8px 14px;font-weight:600}
+.add.done{transform:scale(.94)}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(380px,100%);background:var(--card);border-left:1px solid var(--line);padding:calc(20px + env(safe-area-inset-top,0px)) 22px calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(100%);transition:transform .25s;z-index:20;display:flex;flex-direction:column}
+aside.open{transform:none}
+aside header{position:static;padding:0 0 12px;background:none}
+.close{background:none;border:0;color:var(--ink);font-size:1.6rem}
+#lines{flex:1;overflow:auto}
+.line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);gap:8px}
+.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink)}
+.qty span{display:inline-block;min-width:26px;text-align:center}
+.empty{color:var(--muted);padding:24px 0}
+.total{display:flex;justify-content:space-between;font-family:'Mitr',sans-serif;font-size:1.2rem;padding:14px 0}
+.pay{background:var(--accent);color:var(--on-accent);border:0;border-radius:12px;padding:12px;font-weight:600;width:100%}
+.note{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:16px 20px;margin-top:36px;color:var(--muted)}
+footer{padding:28px 5vw 40px;color:var(--muted);border-top:1px solid var(--line)}
+@media (max-width:640px){.hero{grid-template-columns:1fr;padding:36px 5vw 44px}.hero .big{display:none}}
+@media (prefers-reduced-motion:reduce){aside{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🥭 สวนลุงสม</div>
+    <button class="cartbtn" id="open" aria-label="เปิดตะกร้า">ตะกร้า (<span id="count">0</span>)</button>
+    </header>
+
+    <section class="hero">
+      <div>
+          <h1>มะม่วงสุกจากสวน ส่งถึงบ้านใน 2 วัน</h1>
+              <p>เก็บตอนสั่ง ไม่ค้างสต็อก แพ็กกล่องกันช้ำ ส่งทั่วประเทศ</p>
+                  <a href="#products">เลือกผลไม้</a>
+                    </div>
+                      <div class="big" aria-hidden="true">🥭</div>
+                      </section>
+
+                      <main id="products">
+                        <h2>ผลไม้ประจำสัปดาห์</h2>
+                          <p>กดเพิ่มลงตะกร้าได้เลย ลองดูว่ายอดรวมขึ้นยังไง</p>
+                            <div class="grid" id="grid"></div>
+                              <div class="note">นี่คือหน้าตัวอย่างสำหรับดูหน้าตาเว็บเท่านั้น สินค้า ราคา และชื่อร้านเป็นข้อมูลสมมติ ปุ่มชำระเงินยังไม่เชื่อมระบบจริง</div>
+                              </main>
+
+                              <footer>สวนจอห์นคนหล่อ (ร้านสมมติ) · เปิดรับออเดอร์ทุกวัน 8:00–20:00</footer>
+
+                              <aside id="panel" aria-label="ตะกร้าสินค้า">
+                                <header><h2>ตะกร้าของคุณ</h2><button class="close" id="close" aria-label="ปิดตะกร้า">×</button></header>
+                                  <div id="lines"></div>
+                                    <div class="total"><span>ยอดรวม</span><span id="sum">0 บาท</span></div>
+                                      <button class="pay" id="pay">ไปชำระเงิน</button>
+                                      </aside>
+
+                                      <script>
+                                      var P=[
+                                       {id:1,e:"🥭",n:"มะม่วงน้ำดอกไม้",d:"หวานหอม สุกพอดี",p:120},
+                                        {id:2,e:"🥭",n:"มะม่วงเขียวเสวย",d:"กรอบ เปรี้ยวนิดๆ ทานกับน้ำปลาหวาน",p:90},
+                                         {id:3,e:"🍈",n:"ทุเรียนหมอนทอง",d:"เนื้อหนา เม็ดลีบ",p:280},
+                                          {id:4,e:"🍇",n:"มังคุด",d:"เปลือกบาง เนื้อฟู",p:100},
+                                           {id:5,e:"🍊",n:"ส้มโอขาวแตงกวา",d:"ชุ่มฉ่ำ ไม่ขม",p:85},
+                                            {id:6,e:"🌰",n:"ลำไยเชียงใหม่",d:"เนื้อแห้ง กรอบหวาน",p:70}
+                                            ];
+                                            var cart={};
+                                            var $=function(i){return document.getElementById(i)};
+                                            var money=function(n){return n.toLocaleString('th-TH')+' บาท'};
+                                            $('grid').innerHTML=P.map(function(x){return '<article class="item"><div class="pic" aria-hidden="true">'+x.e+'</div><div class="info"><h3>'+x.n+'</h3><small>'+x.d+'</small><div class="row"><span class="price">'+x.p+' บาท/กก.</span><button class="add" data-id="'+x.id+'">เพิ่ม</button></div></div></article>'}).join('');
+                                            function render(){
+                                              var ids=Object.keys(cart),c=0,s=0,h='';
+                                                ids.forEach(function(id){var x=P[id-1],q=cart[id];c+=q;s+=q*x.p;
+                                                    h+='<div class="line"><div>'+x.e+' '+x.n+'<br><small>'+x.p+' บาท × '+q+' กก.</small></div><div class="qty"><button data-m="'+id+'" aria-label="ลด">−</button><span>'+q+'</span><button data-a="'+id+'" aria-label="เพิ่ม">+</button></div></div>'});
+                                                      $('lines').innerHTML=h||'<div class="empty">ยังไม่มีสินค้า เลือกผลไม้ที่ชอบได้เลย</div>';
+                                                        $('count').textContent=c;$('sum').textContent=money(s);
+                                                        }
+                                                        document.addEventListener('click',function(e){
+                                                          var t=e.target;
+                                                            if(t.classList.contains('add')){var id=t.dataset.id;cart[id]=(cart[id]||0)+1;render();t.classList.add('done');setTimeout(function(){t.classList.remove('done')},150)}
+                                                              if(t.dataset.a){cart[t.dataset.a]++;render()}
+                                                                if(t.dataset.m){var k=t.dataset.m;cart[k]--;if(cart[k]<=0)delete cart[k];render()}
+                                                                });
+                                                                $('open').onclick=function(){$('panel').classList.add('open')};
+                                                                $('close').onclick=function(){$('panel').classList.remove('open')};
+                                                                $('pay').onclick=function(){alert('นี่คือหน้าตัวอย่าง ยังไม่มีระบบชำระเงินจริง')};
+                                                                render();
+                                                                </script>
+                                                                </body>
+                                                                </html>
